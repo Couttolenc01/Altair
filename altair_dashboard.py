@@ -105,3 +105,57 @@ chart_detail = alt.Chart(df).mark_circle(size=100).encode(
 
 st.altair_chart(chart_base & chart_detail, use_container_width=True)
 st.write("Esta interacción dinámica permite seleccionar una región en el gráfico de barras y observar cómo se relaciona la salud con la libertad percibida en los países pertenecientes a dicha región.")
+
+# ------------------------------
+# Modelo de color de Pepsi
+# ------------------------------
+st.markdown("## Modelo de Color Pepsi")
+st.image("pepsi.png", caption="Paleta Pepsi")
+
+st.markdown("""
+Los colores fueron seleccionados con base en el logotipo de Pepsi para crear una identidad visual clara y consistente en los gráficos:
+
+- Azul oscuro: `#045494` (confianza, tecnología, profesionalismo)
+- Rojo vibrante: `#ec1434` (energía, atención)
+- Gris suave: `#d9d2dc` (neutralidad)
+- Rosa tenue: `#f48494` (amabilidad, suavidad)
+- Azul claro: `#6ca4c4` (tranquilidad, accesibilidad)
+
+Esta paleta asegura contraste entre categorías y coherencia visual entre todas las gráficas.
+""")
+
+# ------------------------------
+# Tablero de resumen visual
+# ------------------------------
+st.markdown("## Tablero de Visualización")
+
+col1, col2 = st.columns(2)
+with col1:
+    st.altair_chart(bar, use_container_width=True)
+    st.altair_chart(chart3, use_container_width=True)
+    st.altair_chart(chart5, use_container_width=True)
+with col2:
+    st.altair_chart(chart4, use_container_width=True)
+    st.altair_chart(chart7, use_container_width=True)
+
+# ------------------------------
+# Conclusiones
+# ------------------------------
+st.markdown("## Conclusiones")
+
+st.markdown("""
+**¿Cuál es la importancia de una buena elección de color para la representación de datos?**  
+La elección adecuada de colores permite una interpretación clara y rápida de los datos, ayuda a destacar categorías y patrones, y mejora la experiencia visual del usuario. Colores mal usados pueden confundir o causar dificultades en la lectura.
+
+**¿Altair es una buena librería para realizar gráficas?**  
+Sí, Altair es muy buena para crear gráficos declarativos y responsivos.  
+
+**Ventajas**:  
+- Sintaxis limpia y legible  
+- Buenas integraciones interactivas  
+- Se adapta fácilmente a Streamlit  
+
+**Desventajas**:  
+- Menos personalización comparada con otras librerías como Plotly  
+- No tan útil para dashboards complejos con muchas interacciones
+""")
